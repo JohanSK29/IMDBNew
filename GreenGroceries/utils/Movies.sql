@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS Movies(
 
 CREATE OR REPLACE VIEW vw_produce
 AS
-SELECT p.Moviename, p.MainActor, p.Summary,
+SELECT p.Genre,p.Moviename, p.MainActor, p.Summary,
        p.ReleaseDate, p.BrainRotScore
 FROM Movies p

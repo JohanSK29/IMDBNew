@@ -56,8 +56,8 @@ class UserSignupForm(FlaskForm):
 class FilterProduceForm(FlaskForm):
     category = SelectField('Genre',
                            choices=ProduceCategoryChoices.choices())
-    item = SelectField('Movie name',
-                       choices=ProduceItemChoices.choices())
+    item = SelectField('Movie name (Best to keep empty)',
+                        choices=[('', '')] + ProduceItemChoices.choices())
     variety = SelectField('Actor',
                           choices=ProduceVarietyChoices.choices())
     sold_by = StringField('Keep this box empty!!!')
