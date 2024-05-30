@@ -38,7 +38,7 @@ class UserSignupForm(FlaskForm):
     password_repeat = PasswordField('Repeat Password',
                                     validators=[DataRequired()],
                                     render_kw=dict(placeholder='Password'))
-    user_type = SelectField('User type',
+    user_type = SelectField('Do you farm movies or consume them?',
                             validators=[DataRequired()],
                             choices=UserTypeChoices.choices())
     submit = SubmitField('Sign up')
