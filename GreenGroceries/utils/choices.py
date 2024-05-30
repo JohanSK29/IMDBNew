@@ -3,7 +3,7 @@ import pandas as pd
 
 #from GreenGroceries import app
 
-DATASET_PATH = os.path.join('C:/Users/johan/OneDrive - University of Copenhagen/2. år/DIS/Project/GreenGroceries/GreenGroceries/dataset/revised_movies_database_brain_rot_score.csv')
+DATASET_PATH = os.path.join('/Users/conradvalentinus/Desktop/DATALOGI - ØKONOMI/Andet år/MikroB/HjemmeOpgave2/IMDBNew/GreenGroceries/dataset/revised_movies_database_brain_rot_score.csv')
 
 
 def get_label_name(string):
