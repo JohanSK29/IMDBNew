@@ -108,7 +108,8 @@ def get_produce_by_filters(Genre=None, Moviename=None, MainActor=None,
         conditionals.append(f"farmer_name LIKE '%{farmer_name}%'")
     if BrainRotScore:
         conditionals.append(f"BrainRotScore <= {BrainRotScore}")
-
+    if not conditionals:
+        return []  # No conditions, skip the query AND I ADDED THIS LINE
     args_str = ' AND '.join(conditionals)
     order = " ORDER BY BrainRotScore "
     db_cursor.execute(sql + args_str + order)
