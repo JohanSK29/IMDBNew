@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% from "components/macros.html" import cta_button %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="home">
+        <section class="home__hero">
+            <div class="hero__left">
+                <h1>
+                    Her er et billede af min ven Marcus.
+                </h1>
+                <p>
+                    IMDB men bedre!!
+                </p>
+
+            </div>
+            <div class="hero__right">
+                <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="hero" class="hero__img">
+            </div>
+        </section>
+
+        <section class="home__info">
+            <h2 class="home__title">
+                Marcus er en flink dreng
+            </h2>
+            <div>
+                <div class="info__text">
+                    <h3>Spooky poem</h3>
+                    <p>
+                        In the hollow of a clock, spiders hum tunes of yore,
+                        Forks rain on a banquet where shadows dine on the floor.
+                        Candles flicker sighs, lighting whispers in the gloom,
+                        Time drips slowly upwards in the upside-down room.
+
+                        <br><br>
+                        Nightmares knit mittens for the hands of the moon,
+                        While whispers wear boots, tromping mud in June.
+                        Mirrors munch on minutes, and stars blink in fright,
+                        In horror’s nonsensical reel, danced out of sight
+
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/produce1.jpg') }}" alt="produce">
+            </div>
+            <div>
+                <div class="info__text">
+                    <h3>Romantic Poem</h3>
+                    <p>
+                        Beneath the waltz of whispering leaves,
+                        Heartbeats sync in the ephemeral breeze.
+                        Roses hum the symphony of blush and gaze,
+                        As sunsets paint promises in their golden haze.
+                        
+                        <br><br>
+                        Stars knit a quilt of flickering light,
+                        Where dreams are cradled through the soft night.
+                        In the gentle clasp of intertwined hands,
+                        Romance blooms, timeless as sands
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/produce2.jpg') }}" alt="produce">
+            </div>
+            <div>
+                <div class="info__text">
+                    <h3>Dramatic Poem</h3>
+                    <p>
+                        In the theater of the whispered storm,
+                        Emotions clash, uniforms worn.
+                        Gazes sharp as shattered glass,
+                        Tales woven tight in every pass.
+                        
+                        <br><br>
+
+                        Curtains of rain draw scenes in gray,
+                        Silhouettes dance, betrayals sway.
+                        In life's grand play, each part well-trod,
+                        Drama unfolds, where passions prod.
+
+                    </p>
+                </div>
+                <img src="{{ url_for('static', filename='images/produce3.jpg') }}" alt="produce">
+            </div>
+
+            <h2 class="home__title">
+                Search for the movies that rots your brain
+            </h2>
+            <div>
+                <div class="info__text">
+                    <h3>Action Poem</h3>
+                    <p>
+                        Thunder roars on silvery screens,
+                        Engines howl and neon gleams.
+                        Steel clashes, sparks ignite,
+                        Heroes leap through flames, alight.
+                        
+                        <br><br>
+                        Chases carve through crowded streets,
+                        Rhythms pulse with heartbeats' beats.
+                        In the blur of action's race,
+                        Every moment, a daring chase.
+
+                    </p>
+
+
+                </div>
+                <img src="{{ url_for('static', filename='images/Cyber-Dog.avif') }}" alt="produce">
+            </div>
+        </section>
+    </div>
+{% endblock %}
