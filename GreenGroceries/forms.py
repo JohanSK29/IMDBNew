@@ -2,7 +2,7 @@ from flask_login import current_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField, SelectField, FloatField
 from wtforms.validators import DataRequired, Length, ValidationError, NumberRange
-
+import re
 from GreenGroceries.queries import get_user_by_user_name, get_farmer_by_pk, get_customer_by_pk
 from GreenGroceries.utils.choices import ProduceItemChoices, ProduceCategoryChoices, UserTypeChoices, \
     ProduceVarietyChoices, ProduceUnitChoices
@@ -51,6 +51,9 @@ class UserSignupForm(FlaskForm):
     def validate_password_repeat(self, field):
         if not self.password.data == self.password_repeat.data:
             raise ValidationError(f'Provided passwords do not match.')
+            #REGEX DOWN UNDER
+        if not re.match('^1234$', self.password.data):
+            raise ValidationError(f'Provided Password is not 1234.')
 
 
 class FilterProduceForm(FlaskForm):

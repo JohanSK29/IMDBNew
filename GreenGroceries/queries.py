@@ -93,29 +93,59 @@ def get_produce_by_filters(Genre=None, Moviename=None, MainActor=None,
                            farmer_pk=None, farmer_name=None, BrainRotScore=None):
     sql = """
     SELECT * FROM vw_produce
-    WHERE
+    WHERE 
     """
+    print(Genre,MainActor,BrainRotScore)
     conditionals = []
     if Genre:
         conditionals.append(f"Genre='{Genre}'")
-    if Moviename:
-        conditionals.append(f"Moviename='{Moviename}'")
+    #if Moviename:
+        #conditionals.append(f"Moviename='{Moviename}'")
     if MainActor:
         conditionals.append(f"MainActor = '{MainActor}'")
-    if farmer_pk:
-        conditionals.append(f"farmer_pk = '{farmer_pk}'")
-    if farmer_name:
-        conditionals.append(f"farmer_name LIKE '%{farmer_name}%'")
+    #if farmer_pk:
+        #conditionals.append(f"farmer_pk = '{farmer_pk}'")
+    #if farmer_name:
+        #conditionals.append(f"farmer_name LIKE '%{farmer_name}%'")
     if BrainRotScore:
         conditionals.append(f"BrainRotScore <= {BrainRotScore}")
     if not conditionals:
-        return []  # No conditions, skip the query AND I ADDED THIS LINE
+        print(sql)
+        return []  # No conditions, skip the query AND I ADDED THIS
     args_str = ' AND '.join(conditionals)
     order = " ORDER BY BrainRotScore "
+    print(sql + args_str + order)
     db_cursor.execute(sql + args_str + order)
     produce = [Produce(res) for res in db_cursor.fetchall()] if db_cursor.rowcount > 0 else []
+
     return produce
 
+# def get_produce_by_filters(Genre=None, Moviename=None, MainActor=None,
+#                            farmer_pk=None, farmer_name=None, BrainRotScore=None):
+#     sql = """
+#     SELECT * FROM Movies
+#     WHERE
+#     """
+#     conditionals = []
+#     if Genre:
+#         conditionals.append(f"Genre='{Genre}'")
+#     if Moviename:
+#         conditionals.append(f"Moviename='{Moviename}'")
+#     if MainActor:
+#         conditionals.append(f"MainActor = '{MainActor}'")
+#     if farmer_pk:
+#         conditionals.append(f"farmer_pk = '{farmer_pk}'")
+#     if farmer_name:
+#         conditionals.append(f"farmer_name LIKE '%{farmer_name}%'")
+#     if BrainRotScore:
+#         conditionals.append(f"BrainRotScore <= {BrainRotScore}")
+#     if not conditionals:
+#         return []  # No conditions, skip the query AND I ADDED THIS
+#     args_str = ' AND '.join(conditionals)
+#     order = " ORDER BY BrainRotScore "
+#     db_cursor.execute(sql + args_str + order)
+#     produce = [Produce(res) for res in db_cursor.fetchall()] if db_cursor.rowcount > 0 else []
+#     return produce
 
 def get_customer_by_pk(pk):
     sql = """
