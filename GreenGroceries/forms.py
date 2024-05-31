@@ -54,14 +54,14 @@ class UserSignupForm(FlaskForm):
 
 
 class FilterProduceForm(FlaskForm):
-    category = SelectField('Genre',
+    Genre = SelectField('Genre',
                            choices=ProduceCategoryChoices.choices())
-    item = SelectField('Movie name (Best to keep empty)',
+    Moviename = SelectField('Movie name (Best to keep empty)',
                         choices=[('', '')] + ProduceItemChoices.choices())
-    variety = SelectField('Actor',
+    MainActor = SelectField('Actor',
                           choices=ProduceVarietyChoices.choices())
     sold_by = StringField('Keep this box empty!!!')
-    price = FloatField('Brain-rot score (0-10) (Less than or equal to)',
+    BrainRotScore = FloatField('Brain-rot score (0-10) (Less than or equal to)',
                        validators=[NumberRange(min=0, max=100)])
 
     submit = SubmitField('Filter')
